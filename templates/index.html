@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Site de Filmes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+
+<body style="background-color: #a5a5a5">
+
+
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        
+      <div class="text-center flex-grow-1">
+        <a href="{{ url_for('index') }}" style="text-decoration: none;">
+            <h2 class="text-danger mb-0">Galeria do Horror - os melhores filmes de terror já feitos</h2>
+        </a>
+    </div>
+
+        <div class="navbar-right d-flex align-items-center">
+            <button class="btn btn-danger navbar-btn" onclick="showRandomWord()">Filme de terror aleatório</button>
+        </div>
+ 
+
+        <div class="navbar-left d-flex align-items-center">
+          <a href="{{ url_for('forms') }}" class="btn btn-danger navbar-btn">Deixe uma sugestão de filme</a>
+      </div>
+
+    </div>
+</nav>
+
+
+
+
+    <div class="row, d-flex justify-content-center">
+        
+      <div class="col-xs-12 col-md-3">
+        <div class="poster">
+          <img src="{{ url_for('static', filename='imagens/Chucky.webp') }}" alt="Imagem 6"  style="width:100%" height="500px">
+          <div >
+            <h4 class="text-danger"style="display: flex; justify-content: center; align-items: center;  font-weight: bold;">Chucky- O brinquedo assassino</h4>
+            <h5 style="display: flex; justify-content: center; align-items: center;">VER SEQUÊNCIA<span class="badge badge-secondary" style="margin-left: 2%;">9 filmes</span></h5>
+            <p class="text-black">Uma mulher compra para seu filho um boneco amaldiçoado por um assassino em série morto dentro uma loja de brinquedos. Pouco antes, ele faz um ritual de vodu com o boneco, que ganha vida e se torna um perigoso psicopata.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-12 col-md-3 ">
+        <div class="poster">
+          <a href="{{ url_for('filmes') }}">
+            <img src="{{ url_for('static', filename='imagens/pinhead.webp') }}" alt="Imagem 6" style="width:100%" height="500px">
+        </a>
+          <div >
+            <h4 class=" text-danger" style="display: flex; justify-content: center; align-items: center;  font-weight: bold;">Hellraiser- Renascido do inferno</h4>
+            <h5 style="display: flex; justify-content: center; align-items: center;">VER SEQUÊNCIA<span class="badge badge-secondary" style="margin-left: 2%;">14 filmes</span></h5>
+            <p class="text-black">Frank, um pervertido sexual, compra um cubo mágico e abre a porta de uma dimensão cheia de dor e tortura. Quando uma antiga amante se muda para sua casa, ele tenta convencê-la a ajudá-lo a voltar ao mundo dos vivos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-xs-12 col-md-3">
+        <div class="poster">
+          <img src="{{ url_for('static', filename='imagens/Ghostface.jpg') }}" alt="Imagem 6"  style="width:100%" height="500px">
+          <div >
+            <h4 class="text-danger"style="display: flex; justify-content: center; align-items: center;  font-weight: bold;">Pânico</h4>
+            <h5 style="display: flex; justify-content: center; align-items: center;">VER SEQUÊNCIA<span class="badge badge-secondary" style="margin-left: 2%;">6 filmes</span></h5>
+            <p class="text-black">Um grupo de jovens enfrenta um assassino mascarado que testa seus conhecimentos sobre filmes de terror. A pequena cidade de Woodsboro nunca mais será a mesma.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-12 col-md-3">
+        <div class="poster">
+          <img src="{{ url_for('static', filename='imagens/possesion.jpg') }}" alt="Imagem 6"  style="width:100%" height="500px">
+          <div>
+            <h4  class=" text-danger"style="display: flex; justify-content: center; align-items: center;  font-weight: bold;">Possessão</h4>
+            <h5 style="display: flex; justify-content: center; align-items: center;">SEM SEQUÊNCIA<span class="badge badge-secondary"style="margin-left: 2%;">0 filmes</span></h5>
+            <p class="text-black">Após retornar de uma longa viagem, tudo que Marc quer é encontrar sua esposa Anna e seu filho novamente. No entanto, ele percebe que Anna mudou radicalmente de comportamento e ela pede o divórcio. O homem inicialmente suspeita que ela foi infiel, porém acaba percebendo que está em uma situação macabra.
+            </p>
+           </div>
+        </div>
+      </div>
+ 
+
+    <div class=" col-xs-12 col-md-3">
+        <div class="poster">
+          <img src="{{ url_for('static', filename='imagens/MichaelMyers.jpg') }}" alt="Imagem 6"  style="width:100%" height="450px">
+          <div >
+            <h4 class=" text-danger"style="display: flex; justify-content: center; align-items: center;  font-weight: bold;">Halloween</h4>
+            <h5 style="display: flex; justify-content: center; align-items: center;">VER SEQUÊNCIA<span class="badge badge-secondary"style="margin-left: 2%;">13 filmes</span></h5>
+            <p class="text-black">Em 1963, durante uma noite fria de Halloween, o pequeno Michael Myers, de seis anos, assassina brutalmente sua irmã adolescente, Judith. Ele é condenado e fica detido por 15 anos em uma instituição sob vigilância constante do Dr. Sam Loomis. Em 1978, na véspera de Halloween, Michael rouba um carro e escapa do sanatório Smith's Grove. Ele retorna à sua pacata cidade natal de Haddonfield, Illinois, onde procura suas próximas vítimas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col-xs-12 col-md-3">
+        <div class="poster">
+          <img src="{{ url_for('static', filename='imagens/leatherface.webp') }}" alt="Imagem 6"  style="width:100%" height="450px">
+          <div >
+            <h4 class=" text-danger"style="display: flex; justify-content: center; align-items: center;  font-weight: bold;">O massacre da serra elétrica</h4>
+            <h5 style="display: flex; justify-content: center; align-items: center;">VER SEQUÊNCIA<span class="badge badge-secondary"style="margin-left: 2%;">9 filmes</span></h5>
+            <p class="text-black">No caminho para visitar o túmulo de seu avô, cinco jovens se perdem e mergulham em um pesadelo sem fim quando conhecem uma família de canibais. Os psicopatas atacam os forasteiros utilizando uma variedade de métodos brutais e sádicos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-3">
+        <div class="poster">
+          <img src="{{ url_for('static', filename='imagens/freddy.webp') }}" alt="Imagem 6"  style="width:100%" height="450px">
+          <div >
+            <h4 class="text-danger"style="display: flex; justify-content: center; align-items: center;  font-weight: bold;">A hora do pesadelo</h4>
+            <h5 style="display: flex; justify-content: center; align-items: center;">VER SEQUÊNCIA<span class="badge badge-secondary"style="margin-left: 2%;">8 filmes</span></h5>
+            <p class="text-black">Um grupo de adolescentes tem pesadelos horríveis, em que são atacados por um homem deformado com garras de aço. Ele apenas aparece durante o sono e, para escapar, é preciso acordar. Os crimes vão ocorrendo seguidamente, até que se descobre que o ser misterioso é na verdade Freddy Krueger, um homem que molestou crianças na rua Elm e que foi queimado vivo pela vizinhança. Agora, Krueger pode ter retornado para se vingar daqueles que o mataram, através do sono.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-md-3">
+        <div class="poster">
+          <img src="{{ url_for('static', filename='imagens/suspiria.jpg') }}" alt="Imagem 6"  style="width:100%" height="450px">
+          <div>
+            <h4 class="text-danger"style="display: flex; justify-content: center; align-items: center;  font-weight: bold;">Suspiria</h4>
+            <h5 style="display: flex; justify-content: center; align-items: center;">VER SEQUÊNCIA<span class="badge badge-secondary"style="margin-left: 2%;">3 filmes</span></h5>
+            <p class="text-black"> Susie Bannion, uma jovem bailarina americana, vai para a prestigiada Markos Tanz Company, em Berlim. No mesmo dia de sua chegada, a também dançarina Patricia desaparece misteriosamente. Tendo um progresso extraordinário e se destacando logo em seu teste, com a orientação de Madame Blanc, Susie acaba fazendo amizade com outra dançarina, Sara, que compartilha com ela todas as suas suspeitas obscuras e ameaçadoras do conceituado local.</p>
+          </div>
+        </div>
+      </div>
+
+
+    
+
+</div>
+
+<footer class="text-danger" style=" text-align: center;  width: 100%; padding-top: 85%;">
+    Lavínia Piratello 1 DSM
+</footer>
+
+
+
+
+<script src="script.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+</head>
+<body style="background-color: #a5a5a5;">
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        
+        <div class="text-center flex-grow-1">
+            <a href="{{ url_for('index') }}" style="text-decoration: none;">
+                <h2 class="text-danger mb-0">Galeria do Horror - os melhores filmes de terror já feitos</h2>
+            </a>
+        </div>
+
+        <div class="navbar-right d-flex align-items-center">
+            <button class="btn btn-danger navbar-btn" onclick="showRandomWord()">Filme de terror aleatório</button>
+        </div>
+ 
+
+        <div class="navbar-left d-flex align-items-center">
+          <a href="{{ url_for('forms') }}" class="btn btn-danger navbar-btn">Deixe uma sugestão de filme</a>
+      </div>
+      
+
+    </div>
+</nav>
+
+<h1> Hellraiser: Renascido do inferno</h1>
+
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div id="carousel" class="carousel">
+            <div class="carousel-images">
+                <img src="{{ url_for('static', filename='imagens/hellraiser1.jpeg') }}" alt="Imagem 1">
+                <img src="{{ url_for('static', filename='imagens/hellraiser2.jpeg') }}" alt="Imagem 2">
+                <img src="{{ url_for('static', filename='imagens/hellraiser3.jpeg') }}" alt="Imagem 3">
+                <img src="{{ url_for('static', filename='imagens/hellraiser4.jpeg') }}" alt="Imagem 4">
+                <img src="{{ url_for('static', filename='imagens/hellraiser5.jpg') }}" alt="Imagem 5">
+                <img src="{{ url_for('static', filename='imagens/hellraiser6.jpg') }}" alt="Imagem 6">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

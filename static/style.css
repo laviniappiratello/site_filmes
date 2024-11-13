@@ -1,0 +1,97 @@
+.poster {
+    transition: transform 0.3s ease; /* Transição suave para o efeito */
+  }
+  
+  .poster:hover {
+    transform: scale(1.05); /* Aumenta o tamanho da div em 5% */
+  }
+
+  .randomword {
+    margin-top: 10px; /* Espaçamento acima da palavra */
+    font-size: 24px; /* Tamanho da palavra */
+    color: #ff0000; /* Cor da palavra */
+  }
+
+
+  h2, h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 50px;
+}
+
+h1{
+  text-align: center;
+}
+  .carousel-images img {
+    width: 600px; /* Largura fixa */
+    height: 700px; /* Altura fixa */
+
+}
+
+
+
+
+  .carousel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+}
+
+
+
+
+.prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+
+
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+
+
+}
+
+.prev:hover,
+.next:hover {
+  opacity: 0.8; 
+}
+
+
+
+
+
+
+
+.prev {
+    left: 19px;
+}
+
+.next {
+    right: 10px;
+  }
+
+  
